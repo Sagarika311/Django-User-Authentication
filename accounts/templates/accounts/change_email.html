@@ -1,0 +1,27 @@
+{% extends 'accounts/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h3>Change Email</h3>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div class="mb-3">
+        <label class="form-label">Current Email</label>
+        {{ form.current_email|add_class:"form-control" }}
+      </div>
+      <div class="mb-3">
+        <label class="form-label">New Email</label>
+        {{ form.new_email|add_class:"form-control" }}
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Confirm New Email</label>
+        {{ form.confirm_email|add_class:"form-control" }}
+      </div>
+      <button class="btn btn-success" type="submit">Update Email</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

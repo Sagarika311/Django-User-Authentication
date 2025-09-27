@@ -1,0 +1,7 @@
+Hello,
+
+Please activate your account or reset your password by clicking the link below:
+
+{{ protocol }}://{{ domain }}{{ path }}
+
+If you didn't request this, ignore this email.
