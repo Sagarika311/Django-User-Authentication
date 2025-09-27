@@ -124,5 +124,5 @@ This project is licensed under the MIT License. Feel free to use, modify, and sh
 
 ### 👩‍💻 Author
 
-Developed by **[Sagarika311]**.
+Developed by **Sagarika**.
 If you find this project helpful, give it a ⭐ on GitHub!
