@@ -83,9 +83,9 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database (Render will give DATABASE_URL env var)
 DATABASES = {
     "default": dj_database_url.config(
-        default="sqlite:///db.sqlite3",
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
         conn_max_age=600,
-        ssl_require=True
+        ssl_require=not config("DEBUG", default=False, cast=bool),  # only require SSL in production
     )
 }
 
