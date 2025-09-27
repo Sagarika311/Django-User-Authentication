@@ -29,7 +29,7 @@ SECRET_KEY = config("SECRET_KEY", default="unsafe-secret-key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://django-user-authentication.onrender.com"]
 
 
 # Application definition
