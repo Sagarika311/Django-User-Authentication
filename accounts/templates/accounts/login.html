@@ -1,32 +1,29 @@
 {% extends 'accounts/base.html' %}
-{% load widget_tweaks %}
 {% block title %}Log in{% endblock %}
 {% block content %}
-<div class="row">
-  <div class="col-md-4">
-    <h3>Log in</h3>
-    <form method="post">{% csrf_token %}
-      {{ form.non_field_errors }}
-      <div class="mb-3">
-        <label class="form-label">Username / Email / Phone</label>
-        {{ form.username|add_class:"form-control" }}
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Password</label>
-        {{ form.password|add_class:"form-control" }}
-      </div>
-      <div class="mb-3 form-check">
-        {{ form.remember_me|add_class:"form-check-input" }}
-        <label class="form-check-label">Remember me</label>
-      </div>
-      <button class="btn btn-primary" type="submit">Enter</button>
-    </form>
-
-    <ul class="mt-3">
-      <li><a href="{% url 'accounts:password_reset' %}">Forgot the password?</a></li>
-      <li><a href="{% url 'accounts:remind_username' %}">Forgot the username?</a></li>
-      <li><a href="{% url 'accounts:register' %}">Create an account</a></li>
-    </ul>
-  </div>
+<div class="container-card">
+  <h3>Log in</h3>
+  <form method="post">{% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="mb-3">
+      <label class="form-label">Username / Email / Phone</label>
+      {{ form.username|as_widget(attrs={'class':'form-control'}) }}
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      {{ form.password|as_widget(attrs={'class':'form-control'}) }}
+    </div>
+    <div class="mb-3 form-check">
+      {{ form.remember_me|as_widget(attrs={'class':'form-check-input'}) }}
+      <label class="form-check-label">Remember me</label>
+    </div>
+    <button class="btn btn-primary w-100" type="submit">Log in</button>
+  </form>
+  <ul class="mt-3 text-center list-unstyled">
+    <li><a href="{% url 'accounts:password_reset' %}">Forgot password?</a></li>
+    <li><a href="{% url 'accounts:remind_username' %}">Forgot username?</a></li>
+    <li><a href="{% url 'accounts:register' %}">Create account</a></li>
+  </ul>
 </div>
 {% endblock %}
+
