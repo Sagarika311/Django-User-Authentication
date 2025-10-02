@@ -25,7 +25,7 @@ This project provides a ready-to-use system with account creation, email verific
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/registration-login-system.git
+   git clone https://github.com/Sagarika311/registration-login-system.git
    cd registration-login-system
    ```
 
